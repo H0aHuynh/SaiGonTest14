@@ -15,14 +15,14 @@
 		206CF5E125DF544100B8A97F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 206CF5DF25DF544100B8A97F /* LaunchScreen.storyboard */; };
 		206CF5E425DF544200B8A97F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 206CF5E325DF544200B8A97F /* main.m */; };
 		206CF5FB25DF58D800B8A97F /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF5ED25DF58D700B8A97F /* utils.c */; };
-		206CF5FC25DF58D800B8A97F /* post_exploit.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF5EE25DF58D700B8A97F /* post_exploit.c */; };
+		206CF5FC25DF58D800B8A97F /* jailbreak.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF5EE25DF58D700B8A97F /* jailbreak.c */; };
 		206CF5FD25DF58D800B8A97F /* k_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF5EF25DF58D700B8A97F /* k_utils.c */; };
 		206CF5FE25DF58D800B8A97F /* IOSurface_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF5F225DF58D700B8A97F /* IOSurface_lib.c */; };
 		206CF5FF25DF58D800B8A97F /* sys_darwin.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF5F425DF58D700B8A97F /* sys_darwin.c */; };
 		206CF60025DF58D800B8A97F /* k_offsets.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF5F525DF58D700B8A97F /* k_offsets.c */; };
 		206CF60225DF58D800B8A97F /* user_kernel_alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF5FA25DF58D800B8A97F /* user_kernel_alloc.c */; };
 		206CF60925DF597800B8A97F /* IOKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 206CF60825DF597800B8A97F /* IOKit.tbd */; };
-		206CF60E25DF5BE400B8A97F /* exploit_main.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF60D25DF5BE400B8A97F /* exploit_main.c */; };
+		206CF60E25DF5BE400B8A97F /* runkernel.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF60D25DF5BE400B8A97F /* runkernel.c */; };
 		206CF61D25DF5C9C00B8A97F /* descriptors_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF61125DF5C9C00B8A97F /* descriptors_utils.c */; };
 		206CF61E25DF5C9C00B8A97F /* cicuta_log.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF61225DF5C9C00B8A97F /* cicuta_log.c */; };
 		206CF61F25DF5C9C00B8A97F /* exploit_utilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF61425DF5C9C00B8A97F /* exploit_utilities.c */; };
@@ -30,11 +30,15 @@
 		206CF62125DF5C9C00B8A97F /* voucher_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF61725DF5C9C00B8A97F /* voucher_utils.c */; };
 		206CF62225DF5C9C00B8A97F /* cicuta_virosa.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF61825DF5C9C00B8A97F /* cicuta_virosa.c */; };
 		206CF62925DF6E8300B8A97F /* jb_resources in Resources */ = {isa = PBXBuildFile; fileRef = 206CF62825DF6E8300B8A97F /* jb_resources */; };
-		206CF62F25E2ABC000B8A97F /* amfid_bypass.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF62E25E2ABBF00B8A97F /* amfid_bypass.c */; };
+		206CF62F25E2ABC000B8A97F /* amfid.c in Sources */ = {isa = PBXBuildFile; fileRef = 206CF62E25E2ABBF00B8A97F /* amfid.c */; };
 		4F4743D62A738255000BB060 /* libgeneral_exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F4743D32A738254000BB060 /* libgeneral_exception.cpp */; };
 		4F4743D72A738255000BB060 /* KernelRwWrapper.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4F4743D42A738254000BB060 /* KernelRwWrapper.cc */; };
 		4F4743D82A738255000BB060 /* KernelRW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F4743D52A738255000BB060 /* KernelRW.cpp */; };
 		4F4743DF2A7398ED000BB060 /* checkinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4743DE2A7398ED000BB060 /* checkinfo.m */; };
+		4F91EEA02A77BE6F00692AA0 /* patchfinder64.c in Sources */ = {isa = PBXBuildFile; fileRef = 4F91EE9F2A77BE6F00692AA0 /* patchfinder64.c */; };
+		4FAB78BA2A76C9DF005E6154 /* kerneldec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FAB78B12A76C9DF005E6154 /* kerneldec.cpp */; };
+		4FAB78BB2A76C9E0005E6154 /* lzssdec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FAB78B92A76C9DF005E6154 /* lzssdec.cpp */; };
+		4FAB78C32A76CC7F005E6154 /* liblzfse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAB78C22A76CC7E005E6154 /* liblzfse.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +55,7 @@
 		206CF5E225DF544200B8A97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		206CF5E325DF544200B8A97F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		206CF5ED25DF58D700B8A97F /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
-		206CF5EE25DF58D700B8A97F /* post_exploit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = post_exploit.c; sourceTree = "<group>"; };
+		206CF5EE25DF58D700B8A97F /* jailbreak.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jailbreak.c; sourceTree = "<group>"; };
 		206CF5EF25DF58D700B8A97F /* k_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = k_utils.c; sourceTree = "<group>"; };
 		206CF5F025DF58D700B8A97F /* k_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = k_utils.h; sourceTree = "<group>"; };
 		206CF5F125DF58D700B8A97F /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
@@ -63,7 +67,7 @@
 		206CF5F925DF58D800B8A97F /* mycommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mycommon.h; sourceTree = "<group>"; };
 		206CF5FA25DF58D800B8A97F /* user_kernel_alloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = user_kernel_alloc.c; sourceTree = "<group>"; };
 		206CF60825DF597800B8A97F /* IOKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = IOKit.tbd; path = IOKit/IOKit.tbd; sourceTree = "<group>"; };
-		206CF60D25DF5BE400B8A97F /* exploit_main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = exploit_main.c; sourceTree = "<group>"; };
+		206CF60D25DF5BE400B8A97F /* runkernel.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = runkernel.c; sourceTree = "<group>"; };
 		206CF61125DF5C9C00B8A97F /* descriptors_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = descriptors_utils.c; sourceTree = "<group>"; };
 		206CF61225DF5C9C00B8A97F /* cicuta_log.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cicuta_log.c; sourceTree = "<group>"; };
 		206CF61325DF5C9C00B8A97F /* cicuta_log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cicuta_log.h; sourceTree = "<group>"; };
@@ -77,7 +81,7 @@
 		206CF61B25DF5C9C00B8A97F /* descriptors_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = descriptors_utils.h; sourceTree = "<group>"; };
 		206CF61C25DF5C9C00B8A97F /* exploit_utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exploit_utilities.h; sourceTree = "<group>"; };
 		206CF62825DF6E8300B8A97F /* jb_resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = jb_resources; sourceTree = "<group>"; };
-		206CF62E25E2ABBF00B8A97F /* amfid_bypass.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = amfid_bypass.c; sourceTree = "<group>"; };
+		206CF62E25E2ABBF00B8A97F /* amfid.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = amfid.c; sourceTree = "<group>"; };
 		4F4743D12A738254000BB060 /* KernelRW.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KernelRW.hpp; sourceTree = "<group>"; };
 		4F4743D22A738254000BB060 /* KernelRwWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KernelRwWrapper.h; sourceTree = "<group>"; };
 		4F4743D32A738254000BB060 /* libgeneral_exception.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libgeneral_exception.cpp; sourceTree = "<group>"; };
@@ -86,6 +90,19 @@
 		4F4743D92A73826C000BB060 /* exception.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = exception.hpp; sourceTree = "<group>"; };
 		4F4743DA2A73826C000BB060 /* macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
 		4F4743DE2A7398ED000BB060 /* checkinfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = checkinfo.m; sourceTree = "<group>"; };
+		4F91EE9F2A77BE6F00692AA0 /* patchfinder64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = patchfinder64.c; sourceTree = "<group>"; };
+		4FAB78AE2A76C4FE005E6154 /* patchfinder64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patchfinder64.h; sourceTree = "<group>"; };
+		4FAB78B12A76C9DF005E6154 /* kerneldec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kerneldec.cpp; sourceTree = "<group>"; };
+		4FAB78B22A76C9DF005E6154 /* kerneldec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kerneldec.h; sourceTree = "<group>"; };
+		4FAB78B32A76C9DF005E6154 /* lzfse_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzfse_internal.h; sourceTree = "<group>"; };
+		4FAB78B42A76C9DF005E6154 /* lzfse_encode_tables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzfse_encode_tables.h; sourceTree = "<group>"; };
+		4FAB78B52A76C9DF005E6154 /* lzfse_tunables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzfse_tunables.h; sourceTree = "<group>"; };
+		4FAB78B62A76C9DF005E6154 /* lzssdec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzssdec.h; sourceTree = "<group>"; };
+		4FAB78B72A76C9DF005E6154 /* lzfse_fse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzfse_fse.h; sourceTree = "<group>"; };
+		4FAB78B82A76C9DF005E6154 /* lzfse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzfse.h; sourceTree = "<group>"; };
+		4FAB78B92A76C9DF005E6154 /* lzssdec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lzssdec.cpp; sourceTree = "<group>"; };
+		4FAB78C22A76CC7E005E6154 /* liblzfse.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblzfse.a; sourceTree = "<group>"; };
+		4FAB78C42A76D535005E6154 /* mac_policy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mac_policy.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FAB78C32A76CC7F005E6154 /* liblzfse.a in Frameworks */,
 				206CF60925DF597800B8A97F /* IOKit.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +179,19 @@
 				4F4743D32A738254000BB060 /* libgeneral_exception.cpp */,
 				4F4743D92A73826C000BB060 /* exception.hpp */,
 				4F4743DA2A73826C000BB060 /* macros.h */,
+				4F91EE9F2A77BE6F00692AA0 /* patchfinder64.c */,
+				4FAB78AE2A76C4FE005E6154 /* patchfinder64.h */,
+				4FAB78C22A76CC7E005E6154 /* liblzfse.a */,
+				4FAB78B12A76C9DF005E6154 /* kerneldec.cpp */,
+				4FAB78B22A76C9DF005E6154 /* kerneldec.h */,
+				4FAB78B42A76C9DF005E6154 /* lzfse_encode_tables.h */,
+				4FAB78B72A76C9DF005E6154 /* lzfse_fse.h */,
+				4FAB78B32A76C9DF005E6154 /* lzfse_internal.h */,
+				4FAB78B52A76C9DF005E6154 /* lzfse_tunables.h */,
+				4FAB78B82A76C9DF005E6154 /* lzfse.h */,
+				4FAB78B92A76C9DF005E6154 /* lzssdec.cpp */,
+				4FAB78B62A76C9DF005E6154 /* lzssdec.h */,
+				4FAB78C42A76D535005E6154 /* mac_policy.h */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -184,9 +215,9 @@
 			isa = PBXGroup;
 			children = (
 				206CF60C25DF5B8E00B8A97F /* cicuta_virosa */,
-				206CF60D25DF5BE400B8A97F /* exploit_main.c */,
-				206CF5EE25DF58D700B8A97F /* post_exploit.c */,
-				206CF62E25E2ABBF00B8A97F /* amfid_bypass.c */,
+				206CF60D25DF5BE400B8A97F /* runkernel.c */,
+				206CF5EE25DF58D700B8A97F /* jailbreak.c */,
+				206CF62E25E2ABBF00B8A97F /* amfid.c */,
 			);
 			path = "exploit-main";
 			sourceTree = "<group>";
@@ -294,23 +325,26 @@
 				4F4743D82A738255000BB060 /* KernelRW.cpp in Sources */,
 				206CF60225DF58D800B8A97F /* user_kernel_alloc.c in Sources */,
 				206CF61D25DF5C9C00B8A97F /* descriptors_utils.c in Sources */,
-				206CF62F25E2ABC000B8A97F /* amfid_bypass.c in Sources */,
+				206CF62F25E2ABC000B8A97F /* amfid.c in Sources */,
 				4F4743DF2A7398ED000BB060 /* checkinfo.m in Sources */,
 				206CF61F25DF5C9C00B8A97F /* exploit_utilities.c in Sources */,
 				206CF5D925DF543F00B8A97F /* ViewController.m in Sources */,
 				206CF61E25DF5C9C00B8A97F /* cicuta_log.c in Sources */,
+				4FAB78BA2A76C9DF005E6154 /* kerneldec.cpp in Sources */,
 				4F4743D62A738255000BB060 /* libgeneral_exception.cpp in Sources */,
 				206CF5FD25DF58D800B8A97F /* k_utils.c in Sources */,
 				206CF5D325DF543F00B8A97F /* AppDelegate.m in Sources */,
 				206CF5FF25DF58D800B8A97F /* sys_darwin.c in Sources */,
-				206CF5FC25DF58D800B8A97F /* post_exploit.c in Sources */,
+				206CF5FC25DF58D800B8A97F /* jailbreak.c in Sources */,
 				206CF62225DF5C9C00B8A97F /* cicuta_virosa.c in Sources */,
 				206CF60025DF58D800B8A97F /* k_offsets.c in Sources */,
 				206CF5E425DF544200B8A97F /* main.m in Sources */,
 				206CF5D625DF543F00B8A97F /* SceneDelegate.m in Sources */,
 				206CF62025DF5C9C00B8A97F /* fake_element_spray.c in Sources */,
+				4F91EEA02A77BE6F00692AA0 /* patchfinder64.c in Sources */,
 				206CF5FE25DF58D800B8A97F /* IOSurface_lib.c in Sources */,
-				206CF60E25DF5BE400B8A97F /* exploit_main.c in Sources */,
+				4FAB78BB2A76C9E0005E6154 /* lzssdec.cpp in Sources */,
+				206CF60E25DF5BE400B8A97F /* runkernel.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,10 +485,7 @@
 		206CF5E825DF544200B8A97F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					arm64e,
-				);
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +499,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/IOKit",
+					"$(PROJECT_DIR)/utils",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hoahuynh.saigontest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -478,10 +510,7 @@
 		206CF5E925DF544200B8A97F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					arm64e,
-				);
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -495,6 +524,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/IOKit",
+					"$(PROJECT_DIR)/utils",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hoahuynh.saigontest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
