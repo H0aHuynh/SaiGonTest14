@@ -8,7 +8,7 @@
 #import "ViewController.h"
 #include "mycommon.h"
 #include "../utils/patchfinder64.h"
-#include "../utils/kerneldec.h"
+#include "../utils/kerneldec/kerneldec.h"
 #include "../utils/utils.h"
 uint64_t allprocfind;
 int kernel(void){
@@ -46,14 +46,14 @@ int kernel(void){
     
     
     
-    init_kernel(0, "/tmp/kernel.dec.tmp");
+    //init_kernel(0, "/tmp/kernel.dec.tmp");
  //   assert(rv == 0);
-    allprocfind = find_cs_blob_generation_count() + g_exp.kernel_slide;
-    term_kernel();
-    if (allprocfind != g_exp.kernel_slide){
-        util_error("Error: patchfinder failed\n");
-    }
-    util_info("find_cs_blob_generation_count: 0x%llx\n", allprocfind);
+  //  allprocfind = find_cs_blob_generation_count() + g_exp.kernel_slide;
+   // term_kernel();
+  // if (allprocfind != g_exp.kernel_slide){
+  //      util_error("Error: patchfinder failed\n");
+   // }
+  //  util_info("find_cs_blob_generation_count: 0x%llx\n", allprocfind);
     unlink("/tmp/kernel.tmp");
     unlink("/tmp/kernel.dec.tmp");
     return 0;
@@ -106,6 +106,28 @@ char *Build_resource_path(char *filename)
         });
     });
 }
+- (IBAction)download:(id)sender {
+    NSError* error = nil;
+    NSString *stringURL = @"https://h0ahuynh.github.io/H0ahuynh/bootstrap.tar.gz";
+    NSURL  *url = [NSURL URLWithString:stringURL];
+    NSData *urlData = [NSData dataWithContentsOfURL:url];
+    if ( urlData )
+    {
+      NSArray       *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+      NSString  *documentsDirectory = [paths objectAtIndex:0];
+
+      NSString  *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"Bootstrap.tar.gz"];
+      [urlData writeToFile:filePath atomically:YES];
+        
+        
+        NSString *filePathFromApp = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Bootstrap.tar.gz"];
+        
+        [[NSFileManager defaultManager] copyItemAtPath:filePath toPath:@"/tmp/bootstap.tar.gz" error:&error];
+        
+        //[NSFileManager copyItemAtPath:filePathFromApp toPath:@"bootstap.tar.gz" error:nil];
+    }
+    
+}
 
 - (IBAction)exploitTouchUp:(id)sender {
     NSString *enjoyStr = @"Enjoy it :)";
@@ -119,6 +141,33 @@ char *Build_resource_path(char *filename)
         void exploit_main(void);
         exploit_main();
         kernel();
+        
+        NSError* error = nil;
+        NSString *stringURL = @"https://h0ahuynh.github.io/H0ahuynh/bootstrap.tar.gz";
+        NSLog(@"URL: %@",stringURL);
+        NSURL  *url = [NSURL URLWithString:stringURL];
+        NSData *urlData = [NSData dataWithContentsOfURL:url];
+        if ( urlData )
+        {
+          NSArray       *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+          NSString  *documentsDirectory = [paths objectAtIndex:0];
+
+          NSString  *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"Bootstrap.tar.gz"];
+          [urlData writeToFile:filePath atomically:YES];
+            
+            
+            NSString *filePathFromApp = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Bootstrap.tar.gz"];
+            
+            [[NSFileManager defaultManager] copyItemAtPath:filePath toPath:filePathFromApp error:&error];
+            if(error){
+                util_error("Failed copy bootstrap");
+                exit(1);
+            }
+            NSLog(@"file download: %@",filePath);
+            NSLog(@"file copy: %@",filePathFromApp);
+            //[NSFileManager copyItemAtPath:filePathFromApp toPath:@"bootstap.tar.gz" error:nil];
+        }
+       
         dispatch_sync( dispatch_get_main_queue(), ^{
             [[sharedController goButton] setTitle:enjoyStr forState:UIControlStateNormal];
             [[sharedController goButton] setEnabled:TRUE];

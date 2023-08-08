@@ -160,7 +160,10 @@
 		206CF5EC25DF58B200B8A97F /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				4F8E59F92A7BDC5D00F5A7ED /* kerneldec */,
+				4F8E59F82A7BDC5200F5A7ED /* krw */,
 				206CF5F225DF58D700B8A97F /* IOSurface_lib.c */,
+				4FAB78C22A76CC7E005E6154 /* liblzfse.a */,
 				206CF5F525DF58D700B8A97F /* k_offsets.c */,
 				206CF5F625DF58D700B8A97F /* k_offsets.h */,
 				206CF5EF25DF58D700B8A97F /* k_utils.c */,
@@ -172,25 +175,8 @@
 				206CF5F725DF58D700B8A97F /* user_kernel_alloc.h */,
 				206CF5ED25DF58D700B8A97F /* utils.c */,
 				206CF5F125DF58D700B8A97F /* utils.h */,
-				4F4743D52A738255000BB060 /* KernelRW.cpp */,
-				4F4743D12A738254000BB060 /* KernelRW.hpp */,
-				4F4743D42A738254000BB060 /* KernelRwWrapper.cc */,
-				4F4743D22A738254000BB060 /* KernelRwWrapper.h */,
-				4F4743D32A738254000BB060 /* libgeneral_exception.cpp */,
-				4F4743D92A73826C000BB060 /* exception.hpp */,
-				4F4743DA2A73826C000BB060 /* macros.h */,
 				4F91EE9F2A77BE6F00692AA0 /* patchfinder64.c */,
 				4FAB78AE2A76C4FE005E6154 /* patchfinder64.h */,
-				4FAB78C22A76CC7E005E6154 /* liblzfse.a */,
-				4FAB78B12A76C9DF005E6154 /* kerneldec.cpp */,
-				4FAB78B22A76C9DF005E6154 /* kerneldec.h */,
-				4FAB78B42A76C9DF005E6154 /* lzfse_encode_tables.h */,
-				4FAB78B72A76C9DF005E6154 /* lzfse_fse.h */,
-				4FAB78B32A76C9DF005E6154 /* lzfse_internal.h */,
-				4FAB78B52A76C9DF005E6154 /* lzfse_tunables.h */,
-				4FAB78B82A76C9DF005E6154 /* lzfse.h */,
-				4FAB78B92A76C9DF005E6154 /* lzssdec.cpp */,
-				4FAB78B62A76C9DF005E6154 /* lzssdec.h */,
 				4FAB78C42A76D535005E6154 /* mac_policy.h */,
 			);
 			path = utils;
@@ -247,6 +233,36 @@
 				206CF62825DF6E8300B8A97F /* jb_resources */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		4F8E59F82A7BDC5200F5A7ED /* krw */ = {
+			isa = PBXGroup;
+			children = (
+				4F4743D52A738255000BB060 /* KernelRW.cpp */,
+				4F4743D12A738254000BB060 /* KernelRW.hpp */,
+				4F4743D42A738254000BB060 /* KernelRwWrapper.cc */,
+				4F4743D22A738254000BB060 /* KernelRwWrapper.h */,
+				4F4743D32A738254000BB060 /* libgeneral_exception.cpp */,
+				4F4743D92A73826C000BB060 /* exception.hpp */,
+				4F4743DA2A73826C000BB060 /* macros.h */,
+			);
+			path = krw;
+			sourceTree = "<group>";
+		};
+		4F8E59F92A7BDC5D00F5A7ED /* kerneldec */ = {
+			isa = PBXGroup;
+			children = (
+				4FAB78B12A76C9DF005E6154 /* kerneldec.cpp */,
+				4FAB78B22A76C9DF005E6154 /* kerneldec.h */,
+				4FAB78B42A76C9DF005E6154 /* lzfse_encode_tables.h */,
+				4FAB78B72A76C9DF005E6154 /* lzfse_fse.h */,
+				4FAB78B32A76C9DF005E6154 /* lzfse_internal.h */,
+				4FAB78B52A76C9DF005E6154 /* lzfse_tunables.h */,
+				4FAB78B82A76C9DF005E6154 /* lzfse.h */,
+				4FAB78B92A76C9DF005E6154 /* lzssdec.cpp */,
+				4FAB78B62A76C9DF005E6154 /* lzssdec.h */,
+			);
+			path = kerneldec;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

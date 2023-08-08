@@ -16,13 +16,13 @@ extern "C" int proc_pidpath(int pid, void * buffer, uint32_t  buffersize);
 uint64_t our_proc_kAddr;
 KernelRW *krw = NULL;
 
-#ifdef MAINAPP
+
 extern "C" void ksetOffsets(uint64_t kernBaseAddr, uint64_t kernProcAddr, uint64_t allProcAddr){
     if (krw){
         krw->setOffsets(kernBaseAddr, kernProcAddr, allProcAddr);
     }
 }
-#endif
+
 
 extern "C" uint64_t rk64(uint64_t addr) {
     if (!krw){

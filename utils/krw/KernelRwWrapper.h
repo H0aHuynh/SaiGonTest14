@@ -26,9 +26,9 @@ void terminateKernRw(void);
 
 void handoffKernRw(pid_t spawnedPID, const char *processPath);
 
-#ifdef MAINAPP
+
 void ksetOffsets(uint64_t kernBaseAddr, uint64_t kernProcAddr, uint64_t allProcAddr);
-#endif
+
 
 uint64_t rk64(uint64_t addr);
 uint32_t rk32(uint64_t addr);
