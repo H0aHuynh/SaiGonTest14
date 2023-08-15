@@ -167,19 +167,21 @@ bool isKernRwReady(void){
 }
 
 extern "C"
-void initKernRw(uint64_t taskSelfAddr, uint64_t (*kread64)(uint64_t addr), void (*write_20)(uint64_t addr, const void *buf)){
+void initKernRw(uint64_t taskSelfAddr, uint64_t (*kread64)(uint64_t addr), void (*kwrite64)(uint64_t where, uint64_t what)){
     KernelRW *newKrw = new KernelRW;
     
     auto p = newKrw->getPrimitivepatches(kread64, taskSelfAddr);
 
-    {
-        uint8_t buf[20];
-        for (int i=0; i<sizeof(buf); i+=8) {
-            *((uint64_t*)&buf[i]) = kread64(p.where-20+8+4+i);
-        }
-        *((uint64_t*)&buf[20-8-4]) = p.what;
-        write_20(p.where-20+8+4,buf);
-    }
+    kwrite64(p.where, p.what);;
+    
+//    {
+//        uint8_t buf[20];
+//        for (int i=0; i<sizeof(buf); i+=8) {
+//            *((uint64_t*)&buf[i]) = kread64(p.where-20+8+4+i);
+//        }
+//        *((uint64_t*)&buf[20-8-4]) = p.what;
+//        write_20(p.where-20+8+4,buf);
+//    }
 
     krw = newKrw;
     
@@ -194,7 +196,6 @@ void terminateKernRw(void){
     }
     krw = NULL;
 }
-
 uint64_t rk64ptr(uint64_t where){
    
     uint64_t raw = rk64(where);

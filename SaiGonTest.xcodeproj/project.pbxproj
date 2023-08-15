@@ -35,7 +35,8 @@
 		4F4743D72A738255000BB060 /* KernelRwWrapper.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4F4743D42A738254000BB060 /* KernelRwWrapper.cc */; };
 		4F4743D82A738255000BB060 /* KernelRW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F4743D52A738255000BB060 /* KernelRW.cpp */; };
 		4F4743DF2A7398ED000BB060 /* checkinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4743DE2A7398ED000BB060 /* checkinfo.m */; };
-		4F91EEA02A77BE6F00692AA0 /* patchfinder64.c in Sources */ = {isa = PBXBuildFile; fileRef = 4F91EE9F2A77BE6F00692AA0 /* patchfinder64.c */; };
+		4F57C80B2A8A5FF300B812BE /* patchfinder64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F57C80A2A8A5FF300B812BE /* patchfinder64.m */; };
+		4F903F422A87C1F9000CFB6E /* krw.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F903F412A87C1F8000CFB6E /* krw.m */; };
 		4FAB78BA2A76C9DF005E6154 /* kerneldec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FAB78B12A76C9DF005E6154 /* kerneldec.cpp */; };
 		4FAB78BB2A76C9E0005E6154 /* lzssdec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FAB78B92A76C9DF005E6154 /* lzssdec.cpp */; };
 		4FAB78C32A76CC7F005E6154 /* liblzfse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAB78C22A76CC7E005E6154 /* liblzfse.a */; };
@@ -90,8 +91,49 @@
 		4F4743D92A73826C000BB060 /* exception.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = exception.hpp; sourceTree = "<group>"; };
 		4F4743DA2A73826C000BB060 /* macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
 		4F4743DE2A7398ED000BB060 /* checkinfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = checkinfo.m; sourceTree = "<group>"; };
-		4F91EE9F2A77BE6F00692AA0 /* patchfinder64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = patchfinder64.c; sourceTree = "<group>"; };
-		4FAB78AE2A76C4FE005E6154 /* patchfinder64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patchfinder64.h; sourceTree = "<group>"; };
+		4F57C8092A8A5FF200B812BE /* patchfinder64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patchfinder64.h; sourceTree = "<group>"; };
+		4F57C80A2A8A5FF300B812BE /* patchfinder64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = patchfinder64.m; sourceTree = "<group>"; };
+		4F903F122A87C1F8000CFB6E /* krkw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = krkw.h; sourceTree = "<group>"; };
+		4F903F152A87C1F8000CFB6E /* kread_sem_open.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kread_sem_open.h; sourceTree = "<group>"; };
+		4F903F162A87C1F8000CFB6E /* kread_IOSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kread_IOSurface.h; sourceTree = "<group>"; };
+		4F903F172A87C1F8000CFB6E /* kread_kqueue_workloop_ctl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kread_kqueue_workloop_ctl.h; sourceTree = "<group>"; };
+		4F903F182A87C1F8000CFB6E /* IOSurface_shared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSurface_shared.h; sourceTree = "<group>"; };
+		4F903F1A2A87C1F8000CFB6E /* kwrite_IOSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kwrite_IOSurface.h; sourceTree = "<group>"; };
+		4F903F1B2A87C1F8000CFB6E /* kwrite_sem_open.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kwrite_sem_open.h; sourceTree = "<group>"; };
+		4F903F1C2A87C1F8000CFB6E /* kwrite_dup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kwrite_dup.h; sourceTree = "<group>"; };
+		4F903F1F2A87C1F8000CFB6E /* semaphore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = semaphore.h; sourceTree = "<group>"; };
+		4F903F202A87C1F8000CFB6E /* ipc_port.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ipc_port.h; sourceTree = "<group>"; };
+		4F903F212A87C1F8000CFB6E /* fileglob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileglob.h; sourceTree = "<group>"; };
+		4F903F222A87C1F8000CFB6E /* miscellaneous_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = miscellaneous_types.h; sourceTree = "<group>"; };
+		4F903F232A87C1F8000CFB6E /* ipc_space.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ipc_space.h; sourceTree = "<group>"; };
+		4F903F242A87C1F8000CFB6E /* vm_map_copy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm_map_copy.h; sourceTree = "<group>"; };
+		4F903F252A87C1F8000CFB6E /* pseminfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pseminfo.h; sourceTree = "<group>"; };
+		4F903F262A87C1F8000CFB6E /* vm_object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm_object.h; sourceTree = "<group>"; };
+		4F903F272A87C1F8000CFB6E /* pmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pmap.h; sourceTree = "<group>"; };
+		4F903F282A87C1F8000CFB6E /* fileops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileops.h; sourceTree = "<group>"; };
+		4F903F292A87C1F8000CFB6E /* fileproc_guard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileproc_guard.h; sourceTree = "<group>"; };
+		4F903F2A2A87C1F8000CFB6E /* ipc_entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ipc_entry.h; sourceTree = "<group>"; };
+		4F903F2B2A87C1F8000CFB6E /* vm_named_entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm_named_entry.h; sourceTree = "<group>"; };
+		4F903F2C2A87C1F8000CFB6E /* psemnode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = psemnode.h; sourceTree = "<group>"; };
+		4F903F2D2A87C1F8000CFB6E /* vm_page.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm_page.h; sourceTree = "<group>"; };
+		4F903F2E2A87C1F8000CFB6E /* vm_map_entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm_map_entry.h; sourceTree = "<group>"; };
+		4F903F2F2A87C1F8000CFB6E /* fileproc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileproc.h; sourceTree = "<group>"; };
+		4F903F312A87C1F8000CFB6E /* task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = task.h; sourceTree = "<group>"; };
+		4F903F322A87C1F8000CFB6E /* proc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = proc.h; sourceTree = "<group>"; };
+		4F903F332A87C1F8000CFB6E /* uthread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uthread.h; sourceTree = "<group>"; };
+		4F903F342A87C1F8000CFB6E /* vm_map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm_map.h; sourceTree = "<group>"; };
+		4F903F352A87C1F8000CFB6E /* IOSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSurface.h; sourceTree = "<group>"; };
+		4F903F362A87C1F8000CFB6E /* thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thread.h; sourceTree = "<group>"; };
+		4F903F372A87C1F8000CFB6E /* kqworkloop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kqworkloop.h; sourceTree = "<group>"; };
+		4F903F382A87C1F8000CFB6E /* puaf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = puaf.h; sourceTree = "<group>"; };
+		4F903F392A87C1F8000CFB6E /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		4F903F3B2A87C1F8000CFB6E /* smith.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smith.h; sourceTree = "<group>"; };
+		4F903F3C2A87C1F8000CFB6E /* physpuppet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = physpuppet.h; sourceTree = "<group>"; };
+		4F903F3D2A87C1F8000CFB6E /* perf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = perf.h; sourceTree = "<group>"; };
+		4F903F3E2A87C1F8000CFB6E /* info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = info.h; sourceTree = "<group>"; };
+		4F903F3F2A87C1F8000CFB6E /* krw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = krw.h; sourceTree = "<group>"; };
+		4F903F402A87C1F8000CFB6E /* libkfd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libkfd.h; sourceTree = "<group>"; };
+		4F903F412A87C1F8000CFB6E /* krw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = krw.m; sourceTree = "<group>"; };
 		4FAB78B12A76C9DF005E6154 /* kerneldec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kerneldec.cpp; sourceTree = "<group>"; };
 		4FAB78B22A76C9DF005E6154 /* kerneldec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kerneldec.h; sourceTree = "<group>"; };
 		4FAB78B32A76C9DF005E6154 /* lzfse_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzfse_internal.h; sourceTree = "<group>"; };
@@ -173,10 +215,10 @@
 				206CF5F425DF58D700B8A97F /* sys_darwin.c */,
 				206CF5FA25DF58D800B8A97F /* user_kernel_alloc.c */,
 				206CF5F725DF58D700B8A97F /* user_kernel_alloc.h */,
+				4F57C8092A8A5FF200B812BE /* patchfinder64.h */,
+				4F57C80A2A8A5FF300B812BE /* patchfinder64.m */,
 				206CF5ED25DF58D700B8A97F /* utils.c */,
 				206CF5F125DF58D700B8A97F /* utils.h */,
-				4F91EE9F2A77BE6F00692AA0 /* patchfinder64.c */,
-				4FAB78AE2A76C4FE005E6154 /* patchfinder64.h */,
 				4FAB78C42A76D535005E6154 /* mac_policy.h */,
 			);
 			path = utils;
@@ -200,6 +242,7 @@
 		206CF60B25DF5B0200B8A97F /* exploit-main */ = {
 			isa = PBXGroup;
 			children = (
+				4F903F102A87C1F8000CFB6E /* kfd */,
 				206CF60C25DF5B8E00B8A97F /* cicuta_virosa */,
 				206CF60D25DF5BE400B8A97F /* runkernel.c */,
 				206CF5EE25DF58D700B8A97F /* jailbreak.c */,
@@ -263,6 +306,118 @@
 				4FAB78B62A76C9DF005E6154 /* lzssdec.h */,
 			);
 			path = kerneldec;
+			sourceTree = "<group>";
+		};
+		4F903F102A87C1F8000CFB6E /* kfd */ = {
+			isa = PBXGroup;
+			children = (
+				4F903F112A87C1F8000CFB6E /* libkfd */,
+				4F903F3F2A87C1F8000CFB6E /* krw.h */,
+				4F903F402A87C1F8000CFB6E /* libkfd.h */,
+				4F903F412A87C1F8000CFB6E /* krw.m */,
+			);
+			path = kfd;
+			sourceTree = "<group>";
+		};
+		4F903F112A87C1F8000CFB6E /* libkfd */ = {
+			isa = PBXGroup;
+			children = (
+				4F903F122A87C1F8000CFB6E /* krkw.h */,
+				4F903F132A87C1F8000CFB6E /* krkw */,
+				4F903F1D2A87C1F8000CFB6E /* info */,
+				4F903F382A87C1F8000CFB6E /* puaf.h */,
+				4F903F392A87C1F8000CFB6E /* common.h */,
+				4F903F3A2A87C1F8000CFB6E /* puaf */,
+				4F903F3D2A87C1F8000CFB6E /* perf.h */,
+				4F903F3E2A87C1F8000CFB6E /* info.h */,
+			);
+			path = libkfd;
+			sourceTree = "<group>";
+		};
+		4F903F132A87C1F8000CFB6E /* krkw */ = {
+			isa = PBXGroup;
+			children = (
+				4F903F142A87C1F8000CFB6E /* kread */,
+				4F903F182A87C1F8000CFB6E /* IOSurface_shared.h */,
+				4F903F192A87C1F8000CFB6E /* kwrite */,
+			);
+			path = krkw;
+			sourceTree = "<group>";
+		};
+		4F903F142A87C1F8000CFB6E /* kread */ = {
+			isa = PBXGroup;
+			children = (
+				4F903F152A87C1F8000CFB6E /* kread_sem_open.h */,
+				4F903F162A87C1F8000CFB6E /* kread_IOSurface.h */,
+				4F903F172A87C1F8000CFB6E /* kread_kqueue_workloop_ctl.h */,
+			);
+			path = kread;
+			sourceTree = "<group>";
+		};
+		4F903F192A87C1F8000CFB6E /* kwrite */ = {
+			isa = PBXGroup;
+			children = (
+				4F903F1A2A87C1F8000CFB6E /* kwrite_IOSurface.h */,
+				4F903F1B2A87C1F8000CFB6E /* kwrite_sem_open.h */,
+				4F903F1C2A87C1F8000CFB6E /* kwrite_dup.h */,
+			);
+			path = kwrite;
+			sourceTree = "<group>";
+		};
+		4F903F1D2A87C1F8000CFB6E /* info */ = {
+			isa = PBXGroup;
+			children = (
+				4F903F1E2A87C1F8000CFB6E /* static_types */,
+				4F903F302A87C1F8000CFB6E /* dynamic_types */,
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
+		4F903F1E2A87C1F8000CFB6E /* static_types */ = {
+			isa = PBXGroup;
+			children = (
+				4F903F1F2A87C1F8000CFB6E /* semaphore.h */,
+				4F903F202A87C1F8000CFB6E /* ipc_port.h */,
+				4F903F212A87C1F8000CFB6E /* fileglob.h */,
+				4F903F222A87C1F8000CFB6E /* miscellaneous_types.h */,
+				4F903F232A87C1F8000CFB6E /* ipc_space.h */,
+				4F903F242A87C1F8000CFB6E /* vm_map_copy.h */,
+				4F903F252A87C1F8000CFB6E /* pseminfo.h */,
+				4F903F262A87C1F8000CFB6E /* vm_object.h */,
+				4F903F272A87C1F8000CFB6E /* pmap.h */,
+				4F903F282A87C1F8000CFB6E /* fileops.h */,
+				4F903F292A87C1F8000CFB6E /* fileproc_guard.h */,
+				4F903F2A2A87C1F8000CFB6E /* ipc_entry.h */,
+				4F903F2B2A87C1F8000CFB6E /* vm_named_entry.h */,
+				4F903F2C2A87C1F8000CFB6E /* psemnode.h */,
+				4F903F2D2A87C1F8000CFB6E /* vm_page.h */,
+				4F903F2E2A87C1F8000CFB6E /* vm_map_entry.h */,
+				4F903F2F2A87C1F8000CFB6E /* fileproc.h */,
+			);
+			path = static_types;
+			sourceTree = "<group>";
+		};
+		4F903F302A87C1F8000CFB6E /* dynamic_types */ = {
+			isa = PBXGroup;
+			children = (
+				4F903F312A87C1F8000CFB6E /* task.h */,
+				4F903F322A87C1F8000CFB6E /* proc.h */,
+				4F903F332A87C1F8000CFB6E /* uthread.h */,
+				4F903F342A87C1F8000CFB6E /* vm_map.h */,
+				4F903F352A87C1F8000CFB6E /* IOSurface.h */,
+				4F903F362A87C1F8000CFB6E /* thread.h */,
+				4F903F372A87C1F8000CFB6E /* kqworkloop.h */,
+			);
+			path = dynamic_types;
+			sourceTree = "<group>";
+		};
+		4F903F3A2A87C1F8000CFB6E /* puaf */ = {
+			isa = PBXGroup;
+			children = (
+				4F903F3B2A87C1F8000CFB6E /* smith.h */,
+				4F903F3C2A87C1F8000CFB6E /* physpuppet.h */,
+			);
+			path = puaf;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +496,7 @@
 				4F4743D82A738255000BB060 /* KernelRW.cpp in Sources */,
 				206CF60225DF58D800B8A97F /* user_kernel_alloc.c in Sources */,
 				206CF61D25DF5C9C00B8A97F /* descriptors_utils.c in Sources */,
+				4F903F422A87C1F9000CFB6E /* krw.m in Sources */,
 				206CF62F25E2ABC000B8A97F /* amfid.c in Sources */,
 				4F4743DF2A7398ED000BB060 /* checkinfo.m in Sources */,
 				206CF61F25DF5C9C00B8A97F /* exploit_utilities.c in Sources */,
@@ -353,11 +509,11 @@
 				206CF5FF25DF58D800B8A97F /* sys_darwin.c in Sources */,
 				206CF5FC25DF58D800B8A97F /* jailbreak.c in Sources */,
 				206CF62225DF5C9C00B8A97F /* cicuta_virosa.c in Sources */,
+				4F57C80B2A8A5FF300B812BE /* patchfinder64.m in Sources */,
 				206CF60025DF58D800B8A97F /* k_offsets.c in Sources */,
 				206CF5E425DF544200B8A97F /* main.m in Sources */,
 				206CF5D625DF543F00B8A97F /* SceneDelegate.m in Sources */,
 				206CF62025DF5C9C00B8A97F /* fake_element_spray.c in Sources */,
-				4F91EEA02A77BE6F00692AA0 /* patchfinder64.c in Sources */,
 				206CF5FE25DF58D800B8A97F /* IOSurface_lib.c in Sources */,
 				4FAB78BB2A76C9E0005E6154 /* lzssdec.cpp in Sources */,
 				206CF60E25DF5BE400B8A97F /* runkernel.c in Sources */,

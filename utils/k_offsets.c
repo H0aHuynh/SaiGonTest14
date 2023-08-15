@@ -12,8 +12,9 @@
 #define Q_INTERNAL
 #include "k_offsets.h"
 
-static void offsets_base_iOS_14_x()
+static void offsets_base_iOS_14_x(void)
 {
+    kc_generation_count = 0xfffffff0077b80f0; //iphone 7 plus 14.4.2
     kc_kernel_base = 0xFFFFFFF007004000;
 
     SIZE(ipc_entry)              = 0x18;
@@ -105,7 +106,7 @@ void kernel_offsets_init(void)
             return;
         }
         if (!strcmp(dev->build, "*")) {
-            util_warning("fallback to default iOS 14.x offsets");
+            util_warning("iOS 14.x offsets");
             dev->init();
             return;
         }

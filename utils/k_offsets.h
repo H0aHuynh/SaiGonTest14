@@ -72,6 +72,7 @@ qexternal size_t OFFSET(IOSurfaceRootUserClient, surfaceClients);
 qexternal size_t OFFSET(IOSurfaceClient, surface);
 qexternal size_t OFFSET(IOSurface, values);
 
+qexternal kptr_t kc_generation_count;
 qexternal kptr_t kc_kernel_base;
 qexternal kptr_t kc_kernel_map;
 qexternal kptr_t kc_kernel_task;

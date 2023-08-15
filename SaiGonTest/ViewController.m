@@ -10,50 +10,57 @@
 #include "../utils/patchfinder64.h"
 #include "../utils/kerneldec/kerneldec.h"
 #include "../utils/utils.h"
+#include <mach/error.h>
+#include <sys/utsname.h>
 uint64_t allprocfind;
 int kernel(void){
     int rv;
     uint64_t base = 0;
     NSError* error = nil;
-    
+    unlink("/tmp/kernel.tmp");
+    unlink("/tmp/kernel.dec.tmp");
     NSString* prebootPath = @"/private/preboot/active";
+        
+        NSString* activeFolderName = [NSString stringWithContentsOfFile:prebootPath];
+        
+        NSString* kernelPath = [NSString stringWithFormat:@"/private/preboot/%@/System/Library/Caches/com.apple.kernelcaches/kernelcache", activeFolderName];
+        
+        NSString* workspaceKernelPath = @"/tmp/kernel.tmp";
+        
+        [[NSFileManager defaultManager] copyItemAtPath:kernelPath toPath:workspaceKernelPath error:&error];
+        
+        if(error){
+            printf("Failed copy");
+            exit(1);
+        }
+        
+        FILE* file_input = fopen([workspaceKernelPath UTF8String], "rb");
+        FILE* file_output = fopen("/tmp/kernel.dec.tmp", "wb");
+        
+        if(file_output == NULL || file_input == NULL){
+            printf("Failed open /tmp/kernel.tmp");
+            exit(1);
+        }
+        
+        decompress_kernel(file_input, file_output, NULL, true);
+        
+        fclose(file_input);
+        fclose(file_output);
+        
+        rv = init_kernel(g_exp.kernel_slide + 0xFFFFFFF007004000, "/tmp/kernel.dec.tmp");
     
-    NSString* activeFolderName = [NSString stringWithContentsOfFile:prebootPath];
-    
-    NSString* kernelPath = [NSString stringWithFormat:@"/private/preboot/%@/System/Library/Caches/com.apple.kernelcaches/kernelcache", activeFolderName];
-    
-    NSString* workspaceKernelPath = @"/tmp/kernel.tmp";
-    
-    [[NSFileManager defaultManager] copyItemAtPath:kernelPath toPath:workspaceKernelPath error:&error];
-    
-    if(error){
-        util_error("Failed copy");
-        exit(1);
+    if (rv != KERN_SUCCESS) {
+        util_error("%d", rv);
     }
-    
-    FILE* file_input = fopen([workspaceKernelPath UTF8String], "rb");
-    FILE* file_output = fopen("/tmp/kernel.dec.tmp", "wb");
-    
-    if(file_output == NULL || file_input == NULL){
-        util_error("Failed open /tmp/kernel.tmp");
-        exit(1);
-    }
-    
-    decompress_kernel(file_input, file_output, NULL, true);
-    
-    fclose(file_input);
-    fclose(file_output);
-    
-    
-    
-    //init_kernel(0, "/tmp/kernel.dec.tmp");
- //   assert(rv == 0);
-  //  allprocfind = find_cs_blob_generation_count() + g_exp.kernel_slide;
-   // term_kernel();
-  // if (allprocfind != g_exp.kernel_slide){
-  //      util_error("Error: patchfinder failed\n");
-   // }
-  //  util_info("find_cs_blob_generation_count: 0x%llx\n", allprocfind);
+        
+        
+    uint64_t  off_allproc = find_vm_map_remap();
+    //uint64_t   off_kauth_cred_table_anchor = find_kauth_cred_table_anchor();
+        
+        printf("all_proc : 0x%llx\n", off_allproc);
+       // printf("kauth_cred_table_anchor : 0x%llx\n", off_kauth_cred_table_anchor);
+
+        term_kernel();
     unlink("/tmp/kernel.tmp");
     unlink("/tmp/kernel.dec.tmp");
     return 0;
@@ -106,28 +113,6 @@ char *Build_resource_path(char *filename)
         });
     });
 }
-- (IBAction)download:(id)sender {
-    NSError* error = nil;
-    NSString *stringURL = @"https://h0ahuynh.github.io/H0ahuynh/bootstrap.tar.gz";
-    NSURL  *url = [NSURL URLWithString:stringURL];
-    NSData *urlData = [NSData dataWithContentsOfURL:url];
-    if ( urlData )
-    {
-      NSArray       *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-      NSString  *documentsDirectory = [paths objectAtIndex:0];
-
-      NSString  *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"Bootstrap.tar.gz"];
-      [urlData writeToFile:filePath atomically:YES];
-        
-        
-        NSString *filePathFromApp = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Bootstrap.tar.gz"];
-        
-        [[NSFileManager defaultManager] copyItemAtPath:filePath toPath:@"/tmp/bootstap.tar.gz" error:&error];
-        
-        //[NSFileManager copyItemAtPath:filePathFromApp toPath:@"bootstap.tar.gz" error:nil];
-    }
-    
-}
 
 - (IBAction)exploitTouchUp:(id)sender {
     NSString *enjoyStr = @"Enjoy it :)";
@@ -142,32 +127,7 @@ char *Build_resource_path(char *filename)
         exploit_main();
         kernel();
         
-        NSError* error = nil;
-        NSString *stringURL = @"https://h0ahuynh.github.io/H0ahuynh/bootstrap.tar.gz";
-        NSLog(@"URL: %@",stringURL);
-        NSURL  *url = [NSURL URLWithString:stringURL];
-        NSData *urlData = [NSData dataWithContentsOfURL:url];
-        if ( urlData )
-        {
-          NSArray       *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-          NSString  *documentsDirectory = [paths objectAtIndex:0];
-
-          NSString  *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"Bootstrap.tar.gz"];
-          [urlData writeToFile:filePath atomically:YES];
-            
-            
-            NSString *filePathFromApp = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Bootstrap.tar.gz"];
-            
-            [[NSFileManager defaultManager] copyItemAtPath:filePath toPath:filePathFromApp error:&error];
-            if(error){
-                util_error("Failed copy bootstrap");
-                exit(1);
-            }
-            NSLog(@"file download: %@",filePath);
-            NSLog(@"file copy: %@",filePathFromApp);
-            //[NSFileManager copyItemAtPath:filePathFromApp toPath:@"bootstap.tar.gz" error:nil];
-        }
-       
+        
         dispatch_sync( dispatch_get_main_queue(), ^{
             [[sharedController goButton] setTitle:enjoyStr forState:UIControlStateNormal];
             [[sharedController goButton] setEnabled:TRUE];

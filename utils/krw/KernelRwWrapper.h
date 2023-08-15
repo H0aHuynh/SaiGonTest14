@@ -20,7 +20,7 @@ extern uint64_t our_proc_kAddr;
 
 bool isKernRwReady(void);
 
-void initKernRw(uint64_t taskSelfAddr, uint64_t (*kread64)(uint64_t addr), void (*write_20)(uint64_t addr, const void *buf));
+void initKernRw(uint64_t taskSelfAddr, uint64_t (*kread64)(uint64_t addr), void (*kwrite64)(uint64_t where, uint64_t what));
 
 void terminateKernRw(void);
 
