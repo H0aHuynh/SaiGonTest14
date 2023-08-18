@@ -112,9 +112,12 @@ _IOSurface_id_write(0), _context_write_context_addr(0), _backup{}
         uint32_t bytes_per_element;
         uint32_t bytes_per_row;
         uint32_t alloc_size;
-    } create_args = {
-        .alloc_size = (uint32_t) PAGE_SIZE
-    };
+    } create_args = {0};
+    create_args.width = 100;
+    create_args.height = 100;
+    /* below works */
+    create_args.pixel_format = 0x42475241;
+    create_args.alloc_size = (uint32_t) PAGE_SIZE;
     size_t lock_result_size = sizeof(IOSurfaceLockResult);
 
     retassure(_IOSurfaceRoot = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching("IOSurfaceRoot")), "Failed to open IOSurfaceRoot");

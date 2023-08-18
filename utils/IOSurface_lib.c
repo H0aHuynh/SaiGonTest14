@@ -8,6 +8,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <dlfcn.h>
+#include <sched.h>
+#include <mach/mach_error.h>
 #include <CoreFoundation/CoreFoundation.h>
 
 #include "IOKit/IOKitLib.h"
@@ -110,10 +112,15 @@ IOSurface_set_value(const struct IOSurfaceValueArgs *args, size_t args_size) {
 
 // ---- Initialization ----------------------------------------------------------------------------
 
-uint32_t iosurface_create_fast()
+uint32_t iosurface_create_fast(void)
 {
     kern_return_t kr;
-    struct _IOSurfaceFastCreateArgs create_args = { .alloc_size = (uint32_t) g_exp.pagesize };
+    struct _IOSurfaceFastCreateArgs create_args = { 0 };
+    create_args.width = 100;
+    create_args.height = 100;
+    /* below works */
+    create_args.pixel_format = 0x42475241;
+    create_args.alloc_size = (uint32_t) g_exp.pagesize;
     struct IOSurfaceLockResult lock_result;
     size_t lock_result_size = sizeof(lock_result);
     kr = IOConnectCallMethod(
@@ -127,6 +134,36 @@ uint32_t iosurface_create_fast()
         util_error("could not create %s: 0x%x", "IOSurfaceClient", kr);
         return 0;
     }
+    return lock_result.surface_id;
+}
+
+
+
+
+int create_surface(io_connect_t uc){
+    /* Thanks @bazad */
+   
+    struct _IOSurfaceFastCreateArgs create_args = {0};
+    create_args.width = 100;
+    create_args.height = 100;
+    /* below works */
+    create_args.pixel_format = 0x42475241;
+    create_args.alloc_size = 0;
+
+    struct IOSurfaceLockResult lock_result;
+    size_t lock_result_size = sizeof(lock_result);
+
+    kern_return_t kret = IOConnectCallMethod(
+                                             uc,
+                                             6,
+                                             NULL, 0,
+                                             &create_args,sizeof(create_args),
+                                             NULL, NULL,
+                                             &lock_result, &lock_result_size);
+
+    if(kret)
+        return -1;
+
     return lock_result.surface_id;
 }
 
@@ -217,7 +254,7 @@ static void build_essential_entitlements(void)
 }
 
 bool
-IOSurface_init() {
+IOSurface_init(void) {
 	if (IOSurface_initialized) {
 		return true;
 	}
@@ -242,7 +279,13 @@ IOSurface_init() {
         util_error("could not open %s", "IOSurfaceRoot worker UserClient");
         return false;
     }
-	struct _IOSurfaceFastCreateArgs create_args = { .alloc_size = (uint32_t) g_exp.pagesize };
+	
+    struct _IOSurfaceFastCreateArgs create_args = { 0 };
+    create_args.width = 100;
+    create_args.height = 100;
+    /* below works */
+    create_args.pixel_format = 0x42475241;
+    create_args.alloc_size = (uint32_t) g_exp.pagesize;
 	struct IOSurfaceLockResult lock_result;
 	size_t lock_result_size = sizeof(lock_result);
 	kr = IOConnectCallMethod(
